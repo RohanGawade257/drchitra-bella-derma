@@ -6,13 +6,16 @@ const iconMap = { CalendarDays, ClipboardCheck, CreditCard, MapPin, Sparkles, St
 
 export default function WhyChooseUs() {
   return (
-    <section className="section why-section">
-      <div className="container">
-        <SectionHeading
-          eyebrow="Why Choose Us"
-          title="Designed around trust, clarity and convenience."
-        />
-        <div className="reason-grid">
+    <section className="why-redesign section">
+      <div className="container why-layout">
+        <div className="why-statement">
+          <SectionHeading
+            eyebrow="Why Choose Us"
+            title="Trust is designed into every step of the visit."
+            text="The website journey now mirrors what patients need: clarity, contact, location confidence and doctor-led care."
+          />
+        </div>
+        <div className="why-trust-grid">
           {reasons.map((reason) => (
             <div className="reason-card" key={reason.title}>
               <span className="reason-icon">

@@ -4,18 +4,18 @@ import SectionHeading from './SectionHeading';
 
 export default function AppointmentProcess() {
   return (
-    <section className="section process-section">
+    <section className="appointment-journey section">
       <div className="container">
         <SectionHeading eyebrow="Appointment Process" title="Book in four simple steps." />
-        <div className="process-grid">
+        <div className="journey-timeline">
           {processSteps.map((step, index) => (
-            <div className="process-card" key={step}>
-              <span>Step {index + 1}</span>
+            <div className="journey-step" key={step}>
+              <span>{index + 1}</span>
               <h3>{step}</h3>
             </div>
           ))}
         </div>
-        <div className="center-cta">
+        <div className="journey-cta">
           <a
             className="btn btn-primary"
             href={whatsappUrl("Hello Dr. Chitra's BellaDerma, I want to book an appointment.")}

@@ -1,13 +1,13 @@
 import { Clock3, CreditCard } from 'lucide-react';
 import { clinic, paymentMethods } from '../data/clinicData';
-import SectionHeading from './SectionHeading';
 
 export default function TimingsPayments() {
   return (
-    <section className="section timing-section">
-      <div className="container timing-grid">
-        <div className="timing-panel">
-          <SectionHeading eyebrow="Timings" title="Open all 7 days." />
+    <section className="info-panel-section section">
+      <div className="container info-panel-grid">
+        <div className="timing-panel info-card">
+          <span className="eyebrow">Timings</span>
+          <h2>Open all 7 days.</h2>
           <div className="big-info">
             <Clock3 size={28} />
             <div>
@@ -20,8 +20,9 @@ export default function TimingsPayments() {
             <small>{clinic.feeNote}</small>
           </div>
         </div>
-        <div className="payment-panel">
-          <SectionHeading eyebrow="Payments" title="Flexible payment options." />
+        <div className="payment-panel info-card">
+          <span className="eyebrow">Payments</span>
+          <h2>Flexible payment options.</h2>
           <div className="payment-cloud">
             {paymentMethods.map((method) => (
               <span key={method}>

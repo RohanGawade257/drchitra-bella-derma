@@ -4,35 +4,34 @@ import SectionHeading from './SectionHeading';
 
 export default function AboutDoctor() {
   return (
-    <section className="section doctor-section">
-      <div className="container doctor-card">
-        <div className="doctor-photo-wrap">
+    <section className="doctor-profile-section section">
+      <div className="container doctor-profile-card">
+        <div className="doctor-profile-media">
           <img
             src={images.doctorCabin}
             alt="Dr. Chitra Jaiswal seated inside BellaDerma clinic cabin"
             loading="lazy"
-            className="doctor-photo"
           />
         </div>
-        <div className="doctor-copy">
+        <div className="doctor-profile-copy">
           <SectionHeading eyebrow="About Doctor" title={`Meet ${clinic.doctor}`} />
           <p>
             {clinic.doctor} leads {clinic.name} with a patient-first approach, focusing on personalized skin,
             hair, laser and aesthetic care.
           </p>
-          <div className="doctor-notes">
-            <span>
+          <div className="doctor-care-list">
+            <div>
               <HeartHandshake size={19} />
               Patient-focused consultation
-            </span>
-            <span>
+            </div>
+            <div>
               <BadgeCheck size={19} />
               Doctor-led care
-            </span>
-            <span>
+            </div>
+            <div>
               <GraduationCap size={19} />
-              Qualification and detailed credentials to be updated after confirmation from clinic.
-            </span>
+              Detailed credentials to be updated after clinic confirmation.
+            </div>
           </div>
         </div>
       </div>

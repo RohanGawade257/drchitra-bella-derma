@@ -1,23 +1,22 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import { galleryItems } from '../data/clinicData';
-import SectionHeading from './SectionHeading';
 
 export default function Gallery() {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="section gallery-section" id="gallery">
+    <section className="gallery-editorial section" id="gallery">
       <div className="container">
-        <SectionHeading
-          eyebrow="Gallery"
-          title="A real look at the clinic."
-          text="Clinic images are used as trust assets so patients can recognize the space before visiting."
-        />
-        <div className="gallery-grid">
+        <div className="gallery-head">
+          <span className="eyebrow">Gallery</span>
+          <h2>Real clinic proof, shown with purpose.</h2>
+          <p>Images help patients recognize the space before visiting.</p>
+        </div>
+        <div className="gallery-editorial-grid">
           {galleryItems.map((item, index) => (
             <button
-              className={`gallery-item ${item.className}`}
+              className={`gallery-item editorial-${index + 1} ${item.className}`}
               key={item.title}
               type="button"
               onClick={() => setActive(index)}

@@ -7,7 +7,7 @@ export default function FAQ() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="section faq-section">
+    <section className="faq-redesign section">
       <div className="container narrow">
         <SectionHeading eyebrow="FAQ" title="Common patient questions." />
         <div className="faq-list">

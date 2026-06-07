@@ -49,17 +49,17 @@ Message: ${form.message || 'Not shared'}`;
   };
 
   return (
-    <section className="section contact-section" id="contact">
-      <div className="container contact-grid">
-        <div>
+    <section className="booking-widget-section section" id="contact">
+      <div className="container booking-widget">
+        <div className="booking-widget-copy">
           <SectionHeading
-            eyebrow="Contact"
-            title="Book or enquire on WhatsApp."
-            text="Share your concern and preferred slot. The clinic team can confirm appointment availability."
+            eyebrow="Book Appointment"
+            title="Send your preferred slot to the clinic."
+            text="Fill the widget and it will open WhatsApp with your appointment details ready to send."
           />
           <div className="contact-note">
             <strong>WhatsApp appointment request</strong>
-            <span>This form opens WhatsApp with your appointment details.</span>
+            <span>No backend submission. You review and send the message in WhatsApp.</span>
           </div>
         </div>
         <form className="appointment-form" onSubmit={handleSubmit}>

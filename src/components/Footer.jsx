@@ -3,6 +3,13 @@ import { clinic, navLinks, services } from '../data/clinicData';
 export default function Footer() {
   return (
     <footer className="footer">
+      <div className="container footer-disclaimer">
+        <strong>Medical disclaimer</strong>
+        <p>
+          Results may vary from person to person. Treatment recommendations are provided after consultation and
+          clinical evaluation.
+        </p>
+      </div>
       <div className="container footer-grid">
         <div>
           <h2>{clinic.name}</h2>

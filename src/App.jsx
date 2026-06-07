@@ -2,7 +2,6 @@ import AboutClinic from './components/AboutClinic';
 import AboutDoctor from './components/AboutDoctor';
 import AppointmentProcess from './components/AppointmentProcess';
 import ContactForm from './components/ContactForm';
-import Disclaimer from './components/Disclaimer';
 import FAQ from './components/FAQ';
 import FeaturedTreatments from './components/FeaturedTreatments';
 import FloatingCTA from './components/FloatingCTA';
@@ -13,6 +12,7 @@ import Location from './components/Location';
 import Navbar from './components/Navbar';
 import Services from './components/Services';
 import TimingsPayments from './components/TimingsPayments';
+import TrustSnapshot from './components/TrustSnapshot';
 import WhyChooseUs from './components/WhyChooseUs';
 
 export default function App() {
@@ -21,6 +21,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <TrustSnapshot />
         <AboutClinic />
         <AboutDoctor />
         <Services />
@@ -32,7 +33,6 @@ export default function App() {
         <Location />
         <ContactForm />
         <FAQ />
-        <Disclaimer />
       </main>
       <Footer />
       <FloatingCTA />

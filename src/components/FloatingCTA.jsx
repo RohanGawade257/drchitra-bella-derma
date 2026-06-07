@@ -1,5 +1,5 @@
-import { MessageCircle, Navigation, Phone } from 'lucide-react';
-import { clinic } from '../data/clinicData';
+import { CalendarCheck, MessageCircle, Navigation, Phone } from 'lucide-react';
+import { clinic, whatsappUrl } from '../data/clinicData';
 
 export default function FloatingCTA() {
   return (
@@ -20,6 +20,14 @@ export default function FloatingCTA() {
         <a href={clinic.whatsapp} target="_blank" rel="noreferrer">
           <MessageCircle size={18} />
           WhatsApp
+        </a>
+        <a
+          href={whatsappUrl("Hello Dr. Chitra's BellaDerma, I would like to book an appointment.")}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <CalendarCheck size={18} />
+          Book
         </a>
         <a href={clinic.directions}>
           <Navigation size={18} />

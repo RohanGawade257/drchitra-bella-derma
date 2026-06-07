@@ -1,21 +1,20 @@
 import { ArrowUpRight } from 'lucide-react';
 import { featuredTreatments, whatsappUrl } from '../data/clinicData';
-import SectionHeading from './SectionHeading';
 
 export default function FeaturedTreatments() {
   return (
-    <section className="section featured-section">
+    <section className="concerns-section section">
       <div className="container">
-        <SectionHeading
-          eyebrow="Featured Treatments"
-          title="Popular concerns patients ask about."
-          text="Recommendations are made after consultation and clinical evaluation."
-        />
-        <div className="featured-grid">
+        <div className="concerns-head">
+          <span className="eyebrow">Popular Concerns</span>
+          <h2>What are you looking for?</h2>
+          <p>Fast shortcuts for common patient enquiries. Recommendations are made after consultation.</p>
+        </div>
+        <div className="concern-tiles">
           {featuredTreatments.map((treatment) => (
             <a
               key={treatment}
-              className="featured-card"
+              className="concern-tile"
               href={whatsappUrl(`Hello Dr. Chitra's BellaDerma, I would like to enquire about ${treatment}.`)}
               target="_blank"
               rel="noreferrer"
