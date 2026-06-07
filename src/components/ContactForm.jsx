@@ -58,7 +58,7 @@ Message: ${form.message || 'Not shared'}`;
             text="Share your concern and preferred slot. The clinic team can confirm appointment availability."
           />
           <div className="contact-note">
-            <strong>No backend needed.</strong>
+            <strong>WhatsApp appointment request</strong>
             <span>This form opens WhatsApp with your appointment details.</span>
           </div>
         </div>

@@ -4,16 +4,30 @@ import { clinic } from '../data/clinicData';
 export default function QuickVisitCard() {
   return (
     <aside className="quick-card" aria-label="Quick clinic visit information">
-      <span className="eyebrow">Visit Clinic</span>
-      <h3>Nerul East, Navi Mumbai</h3>
-      <p>{clinic.address}</p>
-      <div className="quick-row">
-        <Clock size={18} />
-        <span>Open today, 11 AM - 9 PM</span>
+      <div className="quick-intro">
+        <span className="eyebrow">Visit Clinic</span>
+        <h3>Nerul East, Navi Mumbai</h3>
       </div>
-      <div className="quick-row">
+      <div className="quick-block address-block">
         <MapPin size={18} />
-        <span>{clinic.landmark}</span>
+        <div>
+          <strong>Address</strong>
+          <p>{clinic.address}</p>
+        </div>
+      </div>
+      <div className="quick-block">
+        <Clock size={18} />
+        <div>
+          <strong>Open Today</strong>
+          <span>11 AM - 9 PM</span>
+        </div>
+      </div>
+      <div className="quick-block">
+        <MapPin size={18} />
+        <div>
+          <strong>Landmark</strong>
+          <span>{clinic.landmark}</span>
+        </div>
       </div>
       <div className="quick-actions">
         <a href={clinic.phoneLink}>
@@ -26,7 +40,7 @@ export default function QuickVisitCard() {
         </a>
       </div>
       {/* <!-- Replace #google-map-link with actual Google Maps URL --> */}
-      <a className="btn btn-outline full" href={clinic.directions}>
+      <a className="btn btn-soft full" href={clinic.directions}>
         <Navigation size={17} />
         Get Directions
       </a>

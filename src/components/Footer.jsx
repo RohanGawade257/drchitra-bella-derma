@@ -32,7 +32,7 @@ export default function Footer() {
           <a href={clinic.whatsapp} target="_blank" rel="noreferrer">
             WhatsApp Clinic
           </a>
-          <small>Copyright © 2026 {clinic.name}. Results may vary.</small>
+          <small>Copyright 2026 {clinic.name}. Results may vary.</small>
         </div>
       </div>
     </footer>

@@ -19,7 +19,7 @@ export const clinic = {
   timing: 'Monday to Sunday: 11:00 AM - 9:00 PM',
   rating: '4.8',
   reviews: '524+',
-  consultationFee: '₹400',
+  consultationFee: 'Rs. 400',
   feeNote: 'Please confirm current consultation fee with the clinic before visit.',
 };
 
@@ -38,7 +38,7 @@ export const images = {
   clinicFrontDoctor,
 };
 
-export const trustBadges = ['4.8★ Rating', '524+ Reviews', 'Open All 7 Days', 'Since 2018'];
+export const trustBadges = ['4.8 Star Rating', '524+ Reviews', 'Open All 7 Days', 'Since 2018'];
 
 export const paymentMethods = [
   'Cash',
@@ -104,13 +104,41 @@ export const featuredTreatments = [
 ];
 
 export const reasons = [
-  'Personalized treatment plans',
-  'Experienced doctor-led care',
-  'Skin, hair, laser and aesthetics under one roof',
-  'Open all 7 days',
-  'Strong public rating',
-  'Affordable and flexible payment options',
-  'Convenient Nerul East location',
+  {
+    title: 'Personalized treatment plans',
+    text: 'Care plans are discussed after consultation and evaluation.',
+    icon: 'ClipboardCheck',
+  },
+  {
+    title: 'Doctor-led care',
+    text: 'Consultations are centered around Dr. Chitra Jaiswal and the clinic team.',
+    icon: 'Stethoscope',
+  },
+  {
+    title: 'Everything under one roof',
+    text: 'Skin, hair, laser, aesthetics, wellness and slimming concerns in one clinic.',
+    icon: 'Sparkles',
+  },
+  {
+    title: 'Open all 7 days',
+    text: 'Convenient 11 AM to 9 PM timings for busy patients.',
+    icon: 'CalendarDays',
+  },
+  {
+    title: 'Strong public rating',
+    text: '4.8 rating with 524+ public ratings listed for patient confidence.',
+    icon: 'Star',
+  },
+  {
+    title: 'Flexible payments',
+    text: 'Cash, UPI, cards, net banking and financing options are listed.',
+    icon: 'CreditCard',
+  },
+  {
+    title: 'Nerul East location',
+    text: 'Easy to find near Madhavi Society / Madhavi CHS in Sector 19A.',
+    icon: 'MapPin',
+  },
 ];
 
 export const processSteps = [
@@ -148,7 +176,7 @@ export const faqs = [
   ['What are the clinic timings?', 'The clinic is open Monday to Sunday from 11:00 AM to 9:00 PM.'],
   ['Is the clinic open on Sunday?', 'Yes, the clinic is open all 7 days, including Sunday.'],
   ['How can I book an appointment?', 'You can call the clinic or send a WhatsApp enquiry to 8591594849.'],
-  ['What is the consultation fee?', 'The listed consultation fee is ₹400. Please confirm the current fee with the clinic before visit.'],
+  ['What is the consultation fee?', 'The listed consultation fee is Rs. 400. Please confirm the current fee with the clinic before visit.'],
   ['Do you provide laser hair removal?', 'Yes, laser hair removal and permanent hair reduction related services are listed. Suitability is confirmed after consultation.'],
   ['Do you treat hair fall and dandruff?', 'Yes, the clinic lists hair fall consultation, hair loss treatment, dandruff treatment and trichology care.'],
   ['Do you provide PCOS / PCOD diet counselling?', 'Yes, PCOS and PCOD diet counselling are included in the clinic service categories.'],

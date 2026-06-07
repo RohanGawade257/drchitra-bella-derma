@@ -23,26 +23,26 @@ export default function Hero() {
             ))}
           </div>
           <div className="cta-row">
-            <a className="btn btn-primary" href={clinic.phoneLink}>
-              <Phone size={18} />
-              Call Now
-            </a>
-            <a className="btn btn-soft" href={clinic.whatsapp} target="_blank" rel="noreferrer">
-              <MessageCircle size={18} />
-              WhatsApp
-            </a>
-            <a className="btn btn-outline" href={clinic.directions}>
-              <Navigation size={18} />
-              Get Directions
-            </a>
             <a
-              className="btn btn-ghost"
+              className="btn btn-primary"
               href={whatsappUrl("Hello Dr. Chitra's BellaDerma, I would like to book an appointment.")}
               target="_blank"
               rel="noreferrer"
             >
               <CalendarCheck size={18} />
               Book Appointment
+            </a>
+            <a className="btn btn-soft" href={clinic.whatsapp} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} />
+              WhatsApp
+            </a>
+            <a className="btn btn-outline" href={clinic.phoneLink}>
+              <Phone size={18} />
+              Call Now
+            </a>
+            <a className="btn btn-ghost" href={clinic.directions}>
+              <Navigation size={18} />
+              Get Directions
             </a>
           </div>
         </div>
