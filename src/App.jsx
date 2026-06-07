@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import AboutClinic from './components/AboutClinic';
 import AboutDoctor from './components/AboutDoctor';
 import AppointmentProcess from './components/AppointmentProcess';
@@ -10,12 +11,57 @@ import Gallery from './components/Gallery';
 import Hero from './components/Hero';
 import Location from './components/Location';
 import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
+import PageSkeleton from './components/PageSkeleton';
 import Services from './components/Services';
 import TimingsPayments from './components/TimingsPayments';
 import TrustSnapshot from './components/TrustSnapshot';
 import WhyChooseUs from './components/WhyChooseUs';
+import { images } from './data/clinicData';
+
+const knownPaths = new Set(['/', '/index.html']);
 
 export default function App() {
+  const [path, setPath] = useState(() => window.location.pathname);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const syncPath = () => setPath(window.location.pathname);
+    window.addEventListener('popstate', syncPath);
+    return () => window.removeEventListener('popstate', syncPath);
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+    const preload = Object.values(images).map(
+      (src) =>
+        new Promise((resolve) => {
+          const image = new Image();
+          image.onload = resolve;
+          image.onerror = resolve;
+          image.src = src;
+        }),
+    );
+
+    Promise.all(preload).then(() => {
+      if (isActive) {
+        setIsLoading(false);
+      }
+    });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  if (!knownPaths.has(path)) {
+    return <NotFound />;
+  }
+
+  if (isLoading) {
+    return <PageSkeleton />;
+  }
+
   return (
     <>
       <Navbar />
