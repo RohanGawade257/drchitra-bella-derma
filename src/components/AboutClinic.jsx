@@ -12,12 +12,14 @@ export default function AboutClinic() {
             src={images.clinicFrontDoctor}
             alt="BellaDerma clinic entrance with doctor outside"
             loading="lazy"
+            decoding="async"
             className="about-image-large"
           />
           <img
             src={images.clinicExterior}
             alt="Readable BellaDerma clinic exterior board"
             loading="lazy"
+            decoding="async"
             className="about-image-small"
           />
         </div>

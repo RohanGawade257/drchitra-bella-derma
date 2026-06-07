@@ -22,7 +22,7 @@ export default function Gallery() {
               onClick={() => setActive(index)}
               aria-label={`Open image: ${item.title}`}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
               <span>
                 <strong>{item.title}</strong>
                 <small>{item.caption}</small>
@@ -37,7 +37,7 @@ export default function Gallery() {
           <button className="lightbox-close" type="button" onClick={() => setActive(null)} aria-label="Close image">
             <X size={24} />
           </button>
-          <img src={galleryItems[active].src} alt={galleryItems[active].alt} />
+          <img src={galleryItems[active].src} alt={galleryItems[active].alt} decoding="async" />
           <p>{galleryItems[active].caption}</p>
         </div>
       )}

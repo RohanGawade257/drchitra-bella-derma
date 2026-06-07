@@ -17,13 +17,12 @@ import Services from './components/Services';
 import TimingsPayments from './components/TimingsPayments';
 import TrustSnapshot from './components/TrustSnapshot';
 import WhyChooseUs from './components/WhyChooseUs';
-import { images } from './data/clinicData';
 
 const knownPaths = new Set(['/', '/index.html']);
 
 export default function App() {
   const [path, setPath] = useState(() => window.location.pathname);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isBooting, setIsBooting] = useState(true);
 
   useEffect(() => {
     const syncPath = () => setPath(window.location.pathname);
@@ -32,33 +31,18 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    let isActive = true;
-    const preload = Object.values(images).map(
-      (src) =>
-        new Promise((resolve) => {
-          const image = new Image();
-          image.onload = resolve;
-          image.onerror = resolve;
-          image.src = src;
-        }),
-    );
-
-    Promise.all(preload).then(() => {
-      if (isActive) {
-        setIsLoading(false);
-      }
+    const frame = window.requestAnimationFrame(() => {
+      setIsBooting(false);
     });
 
-    return () => {
-      isActive = false;
-    };
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   if (!knownPaths.has(path)) {
     return <NotFound />;
   }
 
-  if (isLoading) {
+  if (isBooting) {
     return <PageSkeleton />;
   }
 

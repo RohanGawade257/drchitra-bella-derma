@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { CalendarCheck, Clock3, MapPin, MessageCircle, Navigation, Phone, ShieldCheck } from 'lucide-react';
 import { clinic, images, trustBadges, whatsappUrl } from '../data/clinicData';
 
 export default function Hero() {
+  const [mainImageReady, setMainImageReady] = useState(false);
+  const [doctorImageReady, setDoctorImageReady] = useState(false);
+
   return (
     <section className="hero-concierge" id="home">
       <div className="container hero-concierge-grid">
@@ -43,14 +47,26 @@ export default function Hero() {
         </div>
 
         <div className="hero-editorial" aria-label="Clinic identity and trust images">
-          <div className="hero-image-main">
+          <div className={`hero-image-main ${mainImageReady ? 'image-ready' : 'image-loading'}`}>
+            {!mainImageReady && <span className="image-loading-skeleton" aria-hidden="true" />}
             <img
               src={images.clinicExterior}
               alt="Readable exterior board and entrance of Dr. Chitra's BellaDerma clinic"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              onLoad={() => setMainImageReady(true)}
             />
           </div>
-          <div className="hero-image-small">
-            <img src={images.doctorCabin} alt="Doctor sitting inside BellaDerma clinic cabin" />
+          <div className={`hero-image-small ${doctorImageReady ? 'image-ready' : 'image-loading'}`}>
+            {!doctorImageReady && <span className="image-loading-skeleton" aria-hidden="true" />}
+            <img
+              src={images.doctorCabin}
+              alt="Doctor sitting inside BellaDerma clinic cabin"
+              loading="lazy"
+              decoding="async"
+              onLoad={() => setDoctorImageReady(true)}
+            />
           </div>
           <div className="hero-status-card">
             <Clock3 size={18} />

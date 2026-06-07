@@ -2,22 +2,6 @@ function SkeletonBlock({ className = '' }) {
   return <div className={`skeleton-block ${className}`} aria-hidden="true" />;
 }
 
-function CardSkeleton() {
-  return (
-    <div className="skeleton-card" aria-hidden="true">
-      <SkeletonBlock className="skeleton-icon" />
-      <SkeletonBlock className="skeleton-line medium" />
-      <SkeletonBlock className="skeleton-line" />
-      <SkeletonBlock className="skeleton-line short" />
-      <div className="skeleton-chip-row">
-        <SkeletonBlock className="skeleton-chip" />
-        <SkeletonBlock className="skeleton-chip" />
-        <SkeletonBlock className="skeleton-chip wide" />
-      </div>
-    </div>
-  );
-}
-
 function HeroSkeleton() {
   return (
     <section className="skeleton-hero" aria-hidden="true">
@@ -58,33 +42,9 @@ export default function PageSkeleton() {
       <HeroSkeleton />
       <section className="skeleton-trust">
         <div className="container skeleton-dashboard">
-          {Array.from({ length: 6 }).map((_, index) => (
+          {Array.from({ length: 4 }).map((_, index) => (
             <SkeletonBlock className="skeleton-metric" key={index} />
           ))}
-        </div>
-      </section>
-      <section className="skeleton-services">
-        <div className="container">
-          <SkeletonBlock className="skeleton-section-title" />
-          <div className="skeleton-card-grid">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <CardSkeleton key={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="skeleton-contact">
-        <div className="container skeleton-contact-card">
-          <div>
-            <SkeletonBlock className="skeleton-section-title" />
-            <SkeletonBlock className="skeleton-line wide" />
-            <SkeletonBlock className="skeleton-line medium" />
-          </div>
-          <div className="skeleton-form-grid">
-            {Array.from({ length: 8 }).map((_, index) => (
-              <SkeletonBlock className="skeleton-input" key={index} />
-            ))}
-          </div>
         </div>
       </section>
     </div>

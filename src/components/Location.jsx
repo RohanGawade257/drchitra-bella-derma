@@ -42,6 +42,7 @@ export default function Location() {
             src={images.clinicExterior}
             alt="Readable BellaDerma clinic board used for location proof"
             loading="lazy"
+            decoding="async"
           />
           <div className="map-placeholder">
             {/* <!-- Replace this iframe src with actual Google Maps embed link --> */}

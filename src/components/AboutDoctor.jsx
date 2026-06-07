@@ -11,6 +11,7 @@ export default function AboutDoctor() {
             src={images.doctorCabin}
             alt="Dr. Chitra Jaiswal seated inside BellaDerma clinic cabin"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="doctor-profile-copy">
